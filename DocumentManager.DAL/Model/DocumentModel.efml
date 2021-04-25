@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore namespace="DocumentManager.DAL.Model" p1:name="DocumentContext" p1:Guid="2ee3b262-a15c-4147-b456-d5fa5c39a6f5" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="DocumentApplication" entity-set="DocumentApplications" table="DocumentApplication" schema="application" p1:Guid="40a97bfc-8e25-494a-bbb0-53c7741dfd33">
+    <id name="DocumentID" type="Int64" p1:ValidateRequired="true" p1:Guid="b58140dd-1eff-428a-ac48-b11abb8f609a">
+      <column name="DocumentID" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </id>
+    <property name="ApplicationID" type="Int64" p1:ValidateRequired="true" p1:Guid="20741d2a-be12-4fe6-a6b8-b36ec85fd4b9">
+      <column name="ApplicationID" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </property>
+    <property name="ApplicationSigningTypeCode" type="String" p1:nullable="True" p1:ValidateMaxLength="15" p1:ValidateRequired="false" p1:Guid="d31272fe-9b8b-4eaa-b815-ae5cc1fc4cca">
+      <column name="ApplicationSigningTypeCode" not-null="False" length="15" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="CanBeModified" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="2d2daf59-0626-441b-9a1b-a192e0d47d6a">
+      <column name="CanBeModified" default="0" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="HasError" type="Boolean" p1:ValidateRequired="true" p1:Guid="f97a0872-de87-4343-b7be-1d5a5e162692">
+      <column name="HasError" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="ErrorComment" type="String" p1:nullable="True" p1:ValidateMaxLength="2000" p1:ValidateRequired="false" p1:Guid="2a83ece8-c179-42c3-a560-433658e9771b">
+      <column name="ErrorComment" not-null="False" length="2000" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="IsOriginalReceived" type="Boolean" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="2b61c3e2-19a3-4be1-b525-bc1305988630">
+      <column name="IsOriginalReceived" default="0" not-null="True" sql-type="bit" p1:unicode="False" />
+    </property>
+    <property name="DateNotification" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="21fe253d-dc24-44a6-9670-391e8d45a85c">
+      <column name="DateNotification" not-null="False" sql-type="datetime" p1:unicode="False" />
+    </property>
+    <property name="IsFromClientPortal" type="Boolean" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="c1622d13-a914-4a7f-8d1d-2a33e2b2c5de">
+      <column name="IsFromClientPortal" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="Tenant" entity-set="Tenants" table="Tenant" schema="dbo" p1:Guid="0570fbb6-de97-422b-93df-e79aeda68922">
+    <id name="TenantID" type="Int64" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="406471c5-b619-42ad-b561-8576b653e01c">
+      <column name="TenantID" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </id>
+    <property name="TenantName" type="String" p1:nullable="True" p1:ValidateMaxLength="1000" p1:ValidateRequired="false" p1:Guid="19c284d8-f8cd-45d5-b556-51ebc90c84cd">
+      <column name="TenantName" not-null="False" length="1000" sql-type="nvarchar" p1:unicode="True" />
+    </property>
+  </class>
+  <class name="Document" entity-set="Documents" table="Document" schema="document" p1:Guid="030809a9-4f5c-40fc-9f56-3eaff1aa945a">
+    <Documentation>
+      <Summary>Документ</Summary>
+    </Documentation>
+    <id name="DocumentID" type="Int64" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="c2788403-ee58-4a6c-a476-a681be736e6d">
+      <Documentation>
+        <Summary>ID на документ</Summary>
+      </Documentation>
+      <column name="DocumentID" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </id>
+    <property name="FileName" type="String" p1:nullable="True" p1:ValidateMaxLength="1000" p1:ValidateRequired="false" p1:Guid="608201c7-5121-4dba-b382-cebc95479fdb">
+      <Documentation>
+        <Summary>Име на файл</Summary>
+      </Documentation>
+      <column name="FileName" not-null="False" length="1000" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="DocumentTypeID" type="Int64" p1:ValidateRequired="true" p1:Guid="046b8d9a-0700-48ad-a1df-d608e8fc38ff">
+      <Documentation>
+        <Summary>ID на тип документ</Summary>
+      </Documentation>
+      <column name="DocumentTypeID" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </property>
+    <property name="FileTypeCode" type="String" p1:nullable="True" p1:ValidateMaxLength="10" p1:ValidateRequired="false" p1:Guid="dc8133c6-d4e0-4a83-bf83-669bbd099db4">
+      <Documentation>
+        <Summary>Kod на тип файл (напр. pdf, jpeg, png)</Summary>
+      </Documentation>
+      <column name="FileTypeCode" not-null="False" length="10" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="Comment" type="String" p1:nullable="True" p1:ValidateMaxLength="2000" p1:ValidateRequired="false" p1:Guid="7f9729c1-c06f-42ba-98e1-5a3ee576fef6">
+      <Documentation>
+        <Summary>Коментар</Summary>
+      </Documentation>
+      <column name="Comment" not-null="False" length="2000" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="Guid" type="Guid" p1:ValidateRequired="true" p1:Guid="e30b71e3-94d6-4fb9-b716-e5899f043712">
+      <column name="Guid" not-null="True" sql-type="uniqueidentifier" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="DocumentType" entity-set="DocumentTypes" table="DocumentType" schema="document" p1:Guid="e78a6837-b6b9-494c-81e3-fbbc8e15d08c">
+    <Documentation>
+      <Summary>Тип документ</Summary>
+    </Documentation>
+    <id name="DocumentTypeID" type="Int64" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="b0a60d3b-b94e-4d5e-bef5-16ef40cb6331">
+      <Documentation>
+        <Summary>ID на тип документ</Summary>
+      </Documentation>
+      <column name="DocumentTypeID" not-null="True" precision="19" scale="0" sql-type="bigint" p1:unicode="False" />
+    </id>
+    <property name="Name" type="String" p1:ValidateMaxLength="1000" p1:ValidateRequired="true" p1:Guid="6b0498d1-7bcb-472b-817a-475d7e21ee31">
+      <Documentation>
+        <Summary>Наименование</Summary>
+      </Documentation>
+      <column name="Name" not-null="True" length="1000" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="DisplayOrder" type="Int32" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="913040fa-df55-4db7-a0ec-d12cdd199abe">
+      <Documentation>
+        <Summary>Пореден номер</Summary>
+      </Documentation>
+      <column name="DisplayOrder" not-null="False" precision="10" scale="0" sql-type="int" p1:unicode="False" />
+    </property>
+    <property name="Description" type="String" p1:nullable="True" p1:ValidateMaxLength="2000" p1:ValidateRequired="false" p1:Guid="d95dd663-9ec9-4ca6-a17d-da4e21ac1a07">
+      <Documentation>
+        <Summary>Описание</Summary>
+      </Documentation>
+      <column name="Description" not-null="False" length="2000" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="Code" type="String" p1:nullable="True" p1:ValidateMaxLength="20" p1:ValidateRequired="false" p1:Guid="5c389b16-7014-42dc-a81c-6b25125d0b2d">
+      <Documentation>
+        <Summary>Код</Summary>
+      </Documentation>
+      <column name="Code" not-null="False" length="20" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="DocumentTypeGroupCode" type="String" p1:nullable="True" p1:ValidateMaxLength="10" p1:ValidateRequired="false" p1:Guid="766e6a78-a544-4f11-bbd4-a3395af45638">
+      <Documentation>
+        <Summary>Група на вид документ: - входящ - изходящ - вътрешен(напр. кредитно досие)</Summary>
+      </Documentation>
+      <column name="DocumentTypeGroupCode" not-null="False" length="10" sql-type="varchar" p1:unicode="False" />
+    </property>
+    <property name="HasTemplate" type="Boolean" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1cd7cdec-33c2-425e-ab04-e98b104c6567">
+      <column name="HasTemplate" not-null="False" sql-type="bit" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="DocumentTypeGroup" entity-set="DocumentTypeGroups" table="DocumentTypeGroup" schema="document" p1:Guid="ab98c323-39c9-410a-8911-7658af3abe18">
+    <Documentation>
+      <Summary>Група на вид документ: - входящ - изходящ - вътрешен(напр. кредитно досие)</Summary>
+    </Documentation>
+    <id name="DocumentTypeGroupCode" type="String" p1:ValidateMaxLength="10" p1:ValidateRequired="true" p1:Guid="a31d9fc8-fad1-43cd-a1e2-69809125b384">
+      <Documentation>
+        <Summary>Група на вид документ: - входящ - изходящ - вътрешен(напр. кредитно досие)</Summary>
+      </Documentation>
+      <column name="DocumentTypeGroupCode" not-null="True" length="10" sql-type="varchar" p1:unicode="False" />
+    </id>
+    <property name="Name" type="String" p1:ValidateMaxLength="1000" p1:ValidateRequired="true" p1:Guid="d6b81fa0-fcb3-40ca-bbfe-08f2aa10c3b3">
+      <Documentation>
+        <Summary>Наименование</Summary>
+      </Documentation>
+      <column name="Name" not-null="True" length="1000" sql-type="varchar" p1:unicode="False" />
+    </property>
+  </class>
+  <class name="FileType" entity-set="FileTypes" table="FileType" schema="document" p1:Guid="079ba485-cc40-4ce8-8763-1c1b959115d1">
+    <Documentation>
+      <Summary>Файлов тип: jpg,  pdf, xml, word, xsl...</Summary>
+    </Documentation>
+    <id name="FileTypeCode" type="String" p1:ValidateMaxLength="10" p1:ValidateRequired="true" p1:Guid="89b0d6d1-f542-49b4-9f5a-133e0baf9cdc">
+      <Documentation>
+        <Summary>Код на файлов тип: jpg,  pdf, xml, word, xsl...</Summary>
+      </Documentation>
+      <column name="FileTypeCode" not-null="True" length="10" sql-type="varchar" p1:unicode="False" />
+    </id>
+    <property name="Name" type="String" p1:ValidateMaxLength="1000" p1:ValidateRequired="true" p1:Guid="4f802db8-1e09-48d2-8caa-3737f2335033">
+      <Documentation>
+        <Summary>Наименование</Summary>
+      </Documentation>
+      <column name="Name" not-null="True" length="1000" sql-type="varchar" p1:unicode="False" />
+    </property>
+  </class>
+  <associations>
+    <association name="Document_DocumentApplication" cardinality="OneToOne" p1:Guid="96f5a557-fe80-471a-85ed-6d5e39d72377">
+      <end1 multiplicity="One" name="Document" class="DocumentApplication" relation-class="Document" constrained="True" lazy="False" p1:Guid="2bc0397f-edde-458e-843c-aa096814489d">
+        <property name="DocumentID" />
+      </end1>
+      <end2 multiplicity="One" name="DocumentApplication" class="Document" relation-class="DocumentApplication" constrained="False" lazy="False" p1:Guid="c0524cf2-3918-4751-ad85-71b75168fd06">
+        <property name="DocumentID" />
+      </end2>
+    </association>
+    <association name="FileType_Document" cardinality="OneToMany" p1:Guid="98cafe31-43ee-4ef3-a3db-46daf1ce9e56">
+      <end1 multiplicity="ZeroOrOne" name="FileType" class="Document" relation-class="FileType" constrained="True" lazy="False" p1:Guid="2c2e4275-d058-42cf-9ec1-48b9da657b08">
+        <property name="FileTypeCode" />
+      </end1>
+      <end2 multiplicity="Many" name="Documents" class="FileType" relation-class="Document" lazy="False" p1:Guid="3c6a013e-8008-4840-b443-cb0c215ce0dc">
+        <property name="FileTypeCode" />
+      </end2>
+    </association>
+    <association name="DocumentType_Document" cardinality="OneToMany" p1:Guid="18923bc1-49a5-45a4-9d2b-357dbe22f2b0">
+      <end1 multiplicity="One" name="DocumentType" class="Document" relation-class="DocumentType" constrained="True" lazy="False" p1:Guid="500783ce-0363-4632-9ef9-33a2f7ff6b27">
+        <property name="DocumentTypeID" />
+      </end1>
+      <end2 multiplicity="Many" name="Documents" class="DocumentType" relation-class="Document" lazy="False" p1:Guid="d05c449b-8585-4baa-aa82-d3824382676e">
+        <property name="DocumentTypeID" />
+      </end2>
+    </association>
+    <association name="DocumentTypeGroup_DocumentType" cardinality="OneToMany" p1:Guid="b8abab37-433c-414d-80b4-c8f48c6b9495">
+      <end1 multiplicity="ZeroOrOne" name="DocumentTypeGroup" class="DocumentType" relation-class="DocumentTypeGroup" constrained="True" lazy="False" p1:Guid="02c05d70-8853-4d5a-b606-7265aa254f79">
+        <property name="DocumentTypeGroupCode" />
+      </end1>
+      <end2 multiplicity="Many" name="DocumentTypes" class="DocumentTypeGroup" relation-class="DocumentType" lazy="False" p1:Guid="700f8377-42c2-4edd-9933-dddae594d551">
+        <property name="DocumentTypeGroupCode" />
+      </end2>
+    </association>
+  </associations>
+</efcore>

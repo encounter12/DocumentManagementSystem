@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentManager.DAL\DocumentManager.DAL.csproj" />
+    <ProjectReference Include="..\DocumentManager.DTO\DocumentManager.DTO.csproj" />
+    <ProjectReference Include="..\DocumentManager.Infrastructure\DocumentManager.Infrastructure.csproj" />
+    <ProjectReference Include="..\DocumentManager.Services\DocumentManager.Services.csproj" />
+  </ItemGroup>
+
+</Project>

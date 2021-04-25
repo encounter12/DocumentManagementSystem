@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30803.129
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManager.DAL", "DocumentManager.DAL\DocumentManager.DAL.csproj", "{E5DA5468-36D1-4381-BCAB-E52F78FF0EA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManager.API", "DocumentManager.API\DocumentManager.API.csproj", "{15EDE539-50A5-4D42-AC99-A568A136BE89}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManager.Services", "DocumentManager.Services\DocumentManager.Services.csproj", "{1042268D-8087-4DC8-B05E-195DB4F0E553}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManager.DI", "DocumentManager.DI\DocumentManager.DI.csproj", "{8C9A14EF-F5E5-4629-9144-3F7FFD96005C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentManager.DTO", "DocumentManager.DTO\DocumentManager.DTO.csproj", "{050CED29-F9AA-4066-BF05-D7AEABD512E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentManager.Infrastructure", "DocumentManager.Infrastructure\DocumentManager.Infrastructure.csproj", "{78099043-02D3-40E4-8071-868949F5BB6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5DA5468-36D1-4381-BCAB-E52F78FF0EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DA5468-36D1-4381-BCAB-E52F78FF0EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DA5468-36D1-4381-BCAB-E52F78FF0EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DA5468-36D1-4381-BCAB-E52F78FF0EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15EDE539-50A5-4D42-AC99-A568A136BE89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15EDE539-50A5-4D42-AC99-A568A136BE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15EDE539-50A5-4D42-AC99-A568A136BE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15EDE539-50A5-4D42-AC99-A568A136BE89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1042268D-8087-4DC8-B05E-195DB4F0E553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1042268D-8087-4DC8-B05E-195DB4F0E553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1042268D-8087-4DC8-B05E-195DB4F0E553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1042268D-8087-4DC8-B05E-195DB4F0E553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9A14EF-F5E5-4629-9144-3F7FFD96005C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9A14EF-F5E5-4629-9144-3F7FFD96005C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9A14EF-F5E5-4629-9144-3F7FFD96005C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9A14EF-F5E5-4629-9144-3F7FFD96005C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050CED29-F9AA-4066-BF05-D7AEABD512E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050CED29-F9AA-4066-BF05-D7AEABD512E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050CED29-F9AA-4066-BF05-D7AEABD512E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050CED29-F9AA-4066-BF05-D7AEABD512E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78099043-02D3-40E4-8071-868949F5BB6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78099043-02D3-40E4-8071-868949F5BB6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78099043-02D3-40E4-8071-868949F5BB6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78099043-02D3-40E4-8071-868949F5BB6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D902E974-5B2C-43AF-BD62-F75F23C7D841}
+	EndGlobalSection
+EndGlobal

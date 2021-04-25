@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentManager.DAL\DocumentManager.DAL.csproj" />
+    <ProjectReference Include="..\DocumentManager.DTO\DocumentManager.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

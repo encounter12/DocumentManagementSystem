@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DocumentModel.Class1.cs" />
+    <Compile Remove="DocumentModel.DT_Document.cs" />
+    <Compile Remove="DocumentModel.EN_DocumentTypeGroup.cs" />
+    <Compile Remove="DocumentModel.NC_DocumentType.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentManager.DTO\DocumentManager.DTO.csproj" />
+    <ProjectReference Include="..\DocumentManager.Infrastructure\DocumentManager.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Model\DocumentModel.Document.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </Compile>
+    <Compile Update="Model\DocumentModel.DocumentApplication.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </Compile>
+    <Compile Update="Model\DocumentModel.DocumentContext.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </Compile>
+    <Compile Update="Model\DocumentModel.DocumentType.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </Compile>
+    <Compile Update="Model\DocumentModel.DocumentTypeGroup.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </Compile>
+    <Compile Update="Model\DocumentModel.FileType.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </Compile>
+    <Compile Update="Model\DocumentModel.Tenant.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Model\DocumentModel.Diagram1.view">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </None>
+    <None Update="Model\DocumentModel.edps">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </None>
+    <None Update="Model\DocumentModel.efml">
+      <Generator>DevartEFCoreGenerator</Generator>
+      <LastGenOutput>DocumentModel.info</LastGenOutput>
+    </None>
+    <None Update="Model\DocumentModel.info">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocumentModel.efml</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>
